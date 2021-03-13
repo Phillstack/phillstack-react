@@ -3,9 +3,9 @@ import React from 'react';
 import './projects.styles.scss';
 
 const ProjectsPage = () => (
-    <div className='contactContainer'>
+    <div className='projectsContainer'>
         <div className='titleContainer'>
-            <strong>CONTACT</strong>
+            <strong>Projects</strong>
             <hr />
         </div>
         <h1>COMING SOON!</h1>

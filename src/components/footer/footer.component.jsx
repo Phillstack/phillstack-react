@@ -7,7 +7,7 @@ class Footer extends React.Component {
         return (
             <div className='footer' >
                 <ul className='social-container'>
-                    <li>Link</li>
+                    <p>&copy; 2021 by PhillStack Consulting, LLC.</p>
                 </ul>
             </div>
         )

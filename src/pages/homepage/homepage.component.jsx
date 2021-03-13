@@ -3,9 +3,9 @@ import React from 'react';
 import './homepage.styles.scss';
 
 const HomePage = () => (
-    <div className='contactContainer'>
+    <div className='homeContainer'>
         <div className='titleContainer'>
-            <strong>CONTACT</strong>
+            <strong>HomePage</strong>
             <hr />
         </div>
         <h1>COMING SOON!</h1>
