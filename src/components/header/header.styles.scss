@@ -1,20 +1,20 @@
 .navbar {
-  background-color: #282c34;
+  background-color: #5e57f0;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: whitesmoke;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #282500;
 }
 
 .sticky {
-  background-color: #212038d8 !important;
+  background-color: #5e57f0 !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
@@ -36,7 +36,7 @@
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #1E1EBA !important;
+  background-color: #282500 !important;
   height: 2px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -83,7 +83,7 @@
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+    background-color: #5e57f0 !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -109,8 +109,8 @@
 }
 
 @media (max-width: 767px) {
-  .nav-link {
-    padding: 0.5rem !important;
+  .navbar {
+    visibility: hidden;
   }
 }
 
