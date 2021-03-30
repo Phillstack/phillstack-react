@@ -17,7 +17,7 @@ function Footer() {
             expanded={expand}
             fixed="bottom"
             expand="md"
-            className={"navbar"}
+            className="navbar border-top border-success"
         >
             <Container>
                 <Navbar.Collapse id="responsive-navbar-nav">
