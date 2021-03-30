@@ -1,122 +1,8 @@
-.footer {
-  background-color: #5e57f0;
-  min-height: 5vh;
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  p {
-    font-size: 20px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10;
-    overflow: hidden;
-  }
-
-  li {
-    display: inline;
-  }
-
-  li a {
-    display: inline-block;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-  }
-
-  // .fa-instagram {
-  //   color: #5851db;
-  //   text-decoration: none;
-  // }
-
-  // .fa-instagram:hover {
-  //   color: #c13584;
-  //   border-bottom: 2px solid #f56040;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-
-  // .fa-twitter {
-  //   color: #1da1f2;
-  //   text-decoration: none;
-  // }
-
-  // .fa-twitter:hover {
-  //   color: #f5f8fa;
-  //   border-bottom: 2px solid #1da1f2;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-
-  // .fa-facebook {
-  //   color: #4267b2;
-  //   text-decoration: none;
-  // }
-
-  // .fa-facebook:hover {
-  //   color: #ffffff;
-  //   border-bottom: 2px solid #4267b2;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-
-  // .fa-twitch {
-  //   color: #6441a4;
-  //   text-decoration: none;
-  // }
-
-  // .fa-twitch:hover {
-  //   color: #ffffff;
-  //   border-bottom: 2px solid #6441a4;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-
-  // .fa-youtube {
-  //   color: #ff0000;
-  //   text-decoration: none;
-  // }
-
-  // .fa-youtube:hover {
-  //   color: #282828;
-  //   border-bottom: 2px solid #ff0000;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-
-  // .fa-discord {
-  //   color: #7289da;
-  //   text-decoration: none;
-  // }
-
-  // .fa-discord:hover {
-  //   color: #ffffff;
-  //   border-bottom: 2px solid #7289da;
-  //   -webkit-transition: border-bottom 0.2s;
-  //   transition: border-bottom 0.2s;
-  // }
-}
-
-// @media only screen and (max-width: 767px) {
-//   .social-container {
-//     visibility: hidden;
-//   }
-// }
-
 .navbar {
   background-color: #5e57f0;
   min-height: 5vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -193,6 +79,20 @@
   opacity: 0.9 !important;
 }
 
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  height: 12px !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  position: absolute !important;
+  left: 12px !important;
+  top: 10px !important;
+  transform: rotate(-135deg) !important;
+  opacity: 0.9 !important;
+}
+
 @media (max-width: 767px) {
   .navbar {
     padding: 1rem 2rem !important;
@@ -201,12 +101,8 @@
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
+    flex-direction: row;
   }
-}
-
-.logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
 }
 
 .navbar-nav .nav-link {
@@ -225,8 +121,15 @@
   }
 }
 
+@media (min-width: 768px) {
+  .fixed-bottom {
+    visibility: hidden;
+  }
+}
+
 .navbar-nav .nav-item {
   position: relative;
+  display: block;
 }
 
 .navbar-nav .nav-item a {
@@ -253,62 +156,6 @@
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
 }
-
-// .color-nav {
-//     background-color: gray;
-//   }
-
-//   .logo-container p {
-//       color: black;
-//   }
-
-//   .options {
-//     .option {
-//       color: black;
-//       font-size: large;
-//       text-decoration: none;
-//     }
-
-//     .option:hover {
-//       font-weight: bold;
-//       -webkit-transition: border-bottom 0.2s;
-//       transition: border-bottom 0.2s;
-//     }
-//   }
-
-//   .navbar-toggler {
-//     border: none;
-//   }
-
-//   .navbar-toggler:focus,
-//   .navbar-toggler:active,
-//   .navbar-toggler-icon:focus {
-//     outline: none;
-//     box-shadow: none;
-//   }
-
-//   .social-container {
-//     width: 80%;
-//     display: flex;
-//     align-items: center;
-//   }
-
-//   ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 5px;
-//   }
-
-//   li {
-//     display: inline;
-//   }
-
-//   li a {
-//     display: inline-block;
-//     text-align: center;
-//     padding: 10px;
-//     text-decoration: none;
-//   }
 
 //   .fa-instagram {
 //     color: #5851db;
