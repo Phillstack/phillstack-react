@@ -7,8 +7,6 @@ import "./footer.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEnvelope, faHome, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-
-import './footer.styles.scss';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
@@ -22,6 +20,15 @@ function Footer() {
             className={"navbar"}
         >
             <Container>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav>
+                        <Nav.Item className='m-auto'>
+                            <Nav.Link as={Link} to="/">
+                                <FontAwesomeIcon icon={faFacebook} />
+                            </Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </Navbar.Collapse>
                 <Nav className="m-auto flex-row" defaultActiveKey="#home">
                     <Nav.Item>
                         <Nav.Link
@@ -63,15 +70,6 @@ function Footer() {
                         <span></span>
                     </Navbar.Toggle>
                 </Nav>
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav>
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/">
-                                <FontAwesomeIcon icon={faFacebook} />
-                            </Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-                </Navbar.Collapse>
             </Container>
         </Navbar>
     );
