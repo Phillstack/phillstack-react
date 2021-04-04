@@ -1,7 +1,6 @@
 .homeContainer {
   height: 85vh;
   width: 80%;
-  padding-top: 100px;
   margin: auto;
 }
 
@@ -12,12 +11,22 @@
     transform: translate(-50%, -50%);
     position: absolute;
     width: 80%;
+    padding-top: 150px;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .homeContainer {
-    width: 95%;
-    padding-top: 150px;
+    width: 100%;
   }
+  #banner {
+    height:50%;
+    clip-path: polygon(0 0, 500% 0%, 125% 50%, 0 100%);
+    background-image: url("../../space.jpeg");
+    padding: 25% 0;
+    text-align: center;
+  }
+  // .glide {
+  //   // text-align: center;
+  // }
 }
