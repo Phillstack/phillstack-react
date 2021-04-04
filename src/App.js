@@ -14,13 +14,12 @@ import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
 const particlesOptions = {
-  //customize this to your liking
   particles: {
     number: {
       value: 10,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 1000
       }
     }
   }

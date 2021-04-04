@@ -11,6 +11,7 @@ class ContactPage extends React.Component {
             tier: '',
             budget: '',
             message: '',
+            subscribe: 'checked'
         }
     }
 
@@ -22,10 +23,6 @@ class ContactPage extends React.Component {
         this.setState({ email: event.target.value })
     }
 
-    onTierChange = (event) => {
-        this.setState({ tier: event.target.value })
-    }
-
     onBudgetChange = (event) => {
         this.setState({ budget: event.target.value })
     }
@@ -34,9 +31,13 @@ class ContactPage extends React.Component {
         this.setState({ message: event.target.value })
     }
 
+    onSubscribeChange = (event) => {
+        this.setState({ subscribe: event.target.value })
+    }
+
     render() {
         return (
-            <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+            <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
                 <main className="pa4 black-80">
                     <div className="measure">
                         <fieldset id="contactForm" className="ba b--transparent ph0 mh0">
@@ -64,36 +65,19 @@ class ContactPage extends React.Component {
                                 />
                             </div>
                             <div className="mv3">
-                                <label className="db fw6 lh-copy f6" htmlFor="tier">Tier</label>
-                                <select
-                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                                    type="tier"
-                                    name="tier"
-                                    id="tier"
-                                    placeholder='Tier'
-                                    onChange={this.onTierChange}
-                                >
-                                    <option value='' disabled selected>Select Tier</option>
-                                    <option>Consulting</option>
-                                    <option>Tier 1</option>
-                                    <option>Tier 2</option>
-                                    <option>Tier 3</option>
-                                </select>
-                            </div>
-                            <div className="mv3">
                                 <label className="db fw6 lh-copy f6" htmlFor="budget">Budget</label>
                                 <select
-                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                    className="b pa2 ba bg-transparent hover-bg-black w-100"
                                     type="budget"
                                     name="budget"
                                     id="budget"
                                     onChange={this.onBudgetChange}
                                 >
-                                    <option value='' disabled selected>Select Budget</option>
-                                    <option>0 - 25,000</option>
-                                    <option>0 - 25,000</option>
-                                    <option>0 - 25,000</option>
-                                    <option>0 - 25,000</option>
+                                    <option disabled selected>Select Budget</option>
+                                    <option>0 - 999</option>
+                                    <option>1,000 - 4,999</option>
+                                    <option>5,000 - 9,999</option>
+                                    <option>10,000+</option>
                                 </select>
                             </div>
                             <div className="mv3">
@@ -107,11 +91,20 @@ class ContactPage extends React.Component {
                                     onChange={this.onMessageChange}
                                 />
                             </div>
+                            <div className="checkbox">
+                                <input
+                                    type='checkbox'
+                                    id='subscribeCheck'
+                                    name='subscribe'
+                                    value={this.onSubscribeChange}
+                                />
+                                <label for='subscribe'>Stay up to date with Phillstack!</label>
+                            </div>
                         </fieldset>
-                        <div className="">
+                        <div className="mv3" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
                             <input
                                 onClick={this.onSubmit}
-                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                                className="submitBtn b pa2 ph3 pv2 input-reset ba b--black grow pointer w-40 dib"
                                 type="submit"
                                 value="Contact"
                             />

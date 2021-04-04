@@ -1,9 +1,7 @@
-// .br3 {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+.contactDiv {
+  display: flex;
+  justify-content: center;
+}
 
 .f1 {
   text-align: center;
@@ -13,19 +11,30 @@
   background-color: #000 !important;
 }
 
-@media only screen and (min-width: 700px) {
-  .contactContainer {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 80%;
-  }
+.checkbox {
+  text-align: center;
 }
 
-@media only screen and (max-width: 700px) {
-  .contactContainer {
-    width: 95%;
-    padding-top: 150px;
+.checkbox input {
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.checkbox label {
+  margin: 0px 20px 0px 8px;
+}
+
+.submitBtn {
+  background: transparent;
+}
+
+.submitBtn:hover {
+  color: #fff;
+  background: #000;
+}
+
+@media only screen and (max-width: 767px) {
+  .mv6 {
+    margin-top: 50px;
   }
 }
