@@ -21,10 +21,6 @@ const sliderConfiguration = {
 const HomePage = () => {
     const glide = new Glide('.glide', sliderConfiguration);
 
-    useEffect(() => {
-        return () => glide.mount()
-    }, [glide])
-
     return (
         <div className='homeContainer'>
             <div id='banner'>
