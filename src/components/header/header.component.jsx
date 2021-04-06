@@ -18,8 +18,7 @@ function Header() {
         >
             <Container>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Navbar.Brand href="/">
-                        <Link className="img-fluid logo" alt="brand">PhillStack</Link>
+                    <Navbar.Brand className="img-fluid logo" alt="brand" href="/">PhillStack
                     </Navbar.Brand>
                     <Nav className="ml-auto" defaultActiveKey="#home">
                         <Nav.Item>
