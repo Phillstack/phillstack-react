@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Carousel from "react-multi-carousel";
@@ -12,6 +13,21 @@ export default function HomePage() {
             breakpoint: { max: 3000, min: 1024 },
             items: 3,
             paritialVisibilityGutter: 60
+=======
+import React from 'react';
+import { Link } from "react-router-dom";
+import Glide from "@glidejs/glide"
+
+import './homepage.styles.scss';
+
+const sliderConfiguration = {
+    type: 'carousel',
+    perView: 3,
+    focusAt: 'center',
+    breakpoints: {
+        800: {
+            perView: 3
+>>>>>>> 68f3611250cc6d84c5d667fd02319b214a935b81
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -23,6 +39,7 @@ export default function HomePage() {
             items: 1,
             paritialVisibilityGutter: 30
         }
+<<<<<<< HEAD
     };
 
     const images = [
@@ -39,12 +56,20 @@ export default function HomePage() {
         "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     ];
+=======
+    }
+}
+
+const HomePage = () => {
+    // const glide = new Glide('.glide', sliderConfiguration).mount();
+>>>>>>> 68f3611250cc6d84c5d667fd02319b214a935b81
 
     return (
         <div className='homeContainer'>
             <div id='banner'>
                 <h1>PHILLSTACK</h1>
             </div>
+<<<<<<< HEAD
             <Carousel
                 ssr
                 partialVisbile={false}
@@ -64,6 +89,22 @@ export default function HomePage() {
                     );
                 })}
             </Carousel>
+=======
+            <div className="glide">
+                <div className="glide__track" data-glide-el="track">
+                    <ul className="glide__slides">
+                        <li className="glide__slide">1</li>
+                        <li className="glide__slide">2</li>
+                        <li className="glide__slide">3</li>
+                        <li className="glide__slide">4</li>
+                    </ul>
+                </div>
+            </div>
+            <br></br>
+            <div>
+            <Link to="/contact" className="btn btn-primary">Connect</Link>
+            </div>
+>>>>>>> 68f3611250cc6d84c5d667fd02319b214a935b81
         </div>
     );
 };
