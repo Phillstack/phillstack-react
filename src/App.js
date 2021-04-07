@@ -27,7 +27,7 @@ const particlesOptions = {
 
 function App() {
   return (
-    <div className='container'>
+    <div>
       <Particles className='particles'
         params={particlesOptions}
       />
