@@ -12,7 +12,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 import './homepage.styles.scss';
 
-import { Row } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 
 export default function HomePage() {
     const responsive = {
@@ -74,15 +74,35 @@ export default function HomePage() {
             </Carousel>
             <Container fluid className='projectsHomepage'>
                 <Row className='hpProject1 projectDisplay'>
-                    <img src={BlkGoldImage} className='ba b--black-10 shadow-5 img-fluid' alt='BlkGold Logo' />
+                    <img src={BlkGoldImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='BlkGold Logo' />
                 </Row>
                 <Row className='hpProject2 projectDisplay'>
-                    <img src={OptumImage} className='ba b--black-10 shadow-5 img-fluid' alt='Optum Logo' />
+                    <img src={OptumImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='Optum Logo' />
                 </Row>
                 <Row className='hpProject3 projectDisplay'>
-                    <img src={BoomboxImage} className='ba b--black-10 shadow-5 img-fluid' alt='Boombox Cartel Logo' />
+                    <img src={BoomboxImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='Boombox Cartel Logo' />
                 </Row>
             </Container>
+            <div id='connectBanner'>
+                <Container className='contactSection'>
+                    <Row className=' letsConnect'>
+                        <h1>Let's Connect!</h1>
+                    </Row>
+                    <Row className='contactSocialLinks'>
+                        <h3>Social Links</h3>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row className='contactButton'>
+                        <Button
+                            href="/contact"
+                        >
+                            Contact
+                            </Button>
+                    </Row>
+                </Container>
+
+            </div>
         </div>
     );
 };

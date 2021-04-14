@@ -27,7 +27,7 @@ function Header() {
                         <Nav.Item>
                             <Nav.Link as={Link} to="/">
                                 <FontAwesomeIcon icon={faHome} /> Home
-                        </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -35,7 +35,7 @@ function Header() {
                                 to="/services"
                             >
                                 <FontAwesomeIcon icon={faToolbox} /> Services
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -43,7 +43,7 @@ function Header() {
                                 to="/projects"
                             >
                                 <FontAwesomeIcon icon={faProjectDiagram} /> Projects
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -51,7 +51,7 @@ function Header() {
                                 to="/contact"
                             >
                                 <FontAwesomeIcon icon={faEnvelope} /> Contact
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

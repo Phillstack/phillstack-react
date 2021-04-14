@@ -14,7 +14,7 @@
 
 .bannerLogo {
   width: 70%;
-  top: 0
+  top: 0;
 }
 
 .projectsHomepage {
@@ -25,24 +25,40 @@
   padding: 0px;
 }
 
-.img-fluid {
-  display: block;
-  margin: auto;
-  width: 45%;
-}
-
 .projectDisplay {
   width: 100%;
   flex: 1;
+}
+
+.home-img-fluid {
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
 .hpProject1 {
 }
 
 .hpProject2 {
+  margin-top: 200px;
 }
 
 .hpProject3 {
+  margin-top: 400px;
+}
+
+#connectBanner {
+  height: 35%;
+  clip-path: polygon(0 0, 200% 70%, 0% 150%, 0 0%);
+  background-image: url("../../space.jpeg");
+  padding: 10% 0;
+  text-align: center;
+}
+
+@media only screen and (min-wdith: 1000px) {
+  .projectsHomepage {
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 700px) {
@@ -59,11 +75,16 @@
   .homeContainer {
     width: 100%;
   }
+  
   #banner {
     height: 50%;
     clip-path: polygon(0 0, 500% 0%, 125% 50%, 0 80%);
     background-image: url("../../space.jpeg");
     padding: 25% 0;
     text-align: center;
+  }
+
+  .projectsHomepage {
+    height: 100vh;
   }
 }
