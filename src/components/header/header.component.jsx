@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import PhillstackLogo from '../../assets/psLogo.png';
+
 import "./header.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import logo from "../Assets/logo.png";
@@ -18,14 +20,14 @@ function Header() {
         >
             <Container>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Navbar.Brand href="/">
-                        <Link className="img-fluid logo" alt="brand">PhillStack</Link>
+                    <Navbar.Brand className="logo" alt="brand">
+                        <img src={PhillstackLogo} className='psLogo' alt='Phillstack Logo' />
                     </Navbar.Brand>
                     <Nav className="ml-auto" defaultActiveKey="#home">
                         <Nav.Item>
                             <Nav.Link as={Link} to="/">
                                 <FontAwesomeIcon icon={faHome} /> Home
-                        </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -33,7 +35,7 @@ function Header() {
                                 to="/services"
                             >
                                 <FontAwesomeIcon icon={faToolbox} /> Services
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -41,7 +43,7 @@ function Header() {
                                 to="/projects"
                             >
                                 <FontAwesomeIcon icon={faProjectDiagram} /> Projects
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link
@@ -49,7 +51,7 @@ function Header() {
                                 to="/contact"
                             >
                                 <FontAwesomeIcon icon={faEnvelope} /> Contact
-              </Nav.Link>
+                            </Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
