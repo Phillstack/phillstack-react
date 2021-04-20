@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import SuccessImage from '../../assets/success.png';
+import ErrorIcon from '../../assets/error-icon.png';
+import { Container, Button } from 'react-bootstrap';
 
 import './contact.styles.scss';
 
@@ -14,7 +16,8 @@ class ContactPage extends React.Component {
             budget: '',
             message: '',
             subscribe: 'checked',
-            isSubmitted: false
+            isSubmitted: false,
+            isSubmissionError: false
         }
     }
 
@@ -55,18 +58,25 @@ class ContactPage extends React.Component {
                     })
                 },
                 (error) => {
+                    console.error(error);
                     this.setState({
-                        isLoaded: true,
-                        error
-                    });
+                        isSubmissionError: true
+                    })
                 }
             )
     }
 
+    retry = () => {
+        this.setState({
+            isSubmissionError: false,
+            isSubmitted: false
+        })
+    }
+
     render() {
-        return (
-            <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
-                {!this.state.isSubmitted ?
+        if (!this.state.isSubmitted && !this.state.isSubmissionError) {
+            return (
+                <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
                     <form className="pa4 black-80" onSubmit={this.onSubmit}>
                         <div className="measure">
                             <fieldset id="contactForm" className="ba b--transparent ph0 mh0">
@@ -141,14 +151,32 @@ class ContactPage extends React.Component {
                             </div>
                         </div>
                     </form>
-                    :
-                    <div id="inquiry-confirmation">
-                        <img id="success-image" src={SuccessImage}></img>
-                        <h1>THANK YOU {this.state.fullName}!</h1>
+                </article>
+            );
+        } else if (this.state.isSubmitted && !this.state.isSubmissionError) {
+            return (
+                <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
+                    <div className="inquiry-submission-status">
+                        <img className="submission-status-image" src={SuccessImage} alt="success"></img>
+                        <h1>Thank You {this.state.fullName}!</h1>
                         <p>We've received your inquiry and will be in touch soon.</p>
-                    </div>}
-            </article>
-        );
+                    </div>
+                </article>);
+        } else if (this.state.isSubmissionError) {
+            return (
+                <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
+                    <div className="inquiry-submission-status">
+                        <img className="submission-status-image" src={ErrorIcon} alt="error"></img>
+                        <h1>Error Submitting Inquiry</h1>
+                        <Container className='errorBtn'>
+                            <a onClick={this.retry}>
+                                <Button className='contactBtn btn'>Try Again</Button>
+                            </a>
+                        </Container>
+                    </div>
+                </article>
+            )
+        }
     }
 }
 
