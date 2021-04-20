@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Raleway", serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(89deg, #bab0e4c7 0%, rgb(44, 44, 44) 100%);

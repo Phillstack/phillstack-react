@@ -1,24 +1,60 @@
 .servicesContainer {
-    height: 85vh;
-    width: 80%;
-    padding-top: 100px;
-    margin: auto;
+  height: 115vh;
+  width: 80%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin: auto;
+}
+
+h2,
+h4 {
+  text-align: center;
+}
+
+.btn {
+  height: 50px;
+  width: 200px;
+  justify-content: center;
+  transition: 0.8s;
+}
+
+.servicesBtn,
+.contactBtn,
+a {
+  text-align: center;
+  background: transparent;
+  color: black;
+}
+
+.btn-primary {
+  background: -webkit-linear-gradient(0deg, transparent 50%, #000 50%);
+  background-size: 400px 80px;
+  border: 2px solid #000000;
+}
+
+.btn-primary:hover {
+  a {
+    color: white;
   }
-  
-  @media only screen and (min-width: 700px) {
-    .servicesContainer {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      position: absolute;
-      width: 80%;
-    }
+  background-position: 200px 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+// @media only screen and (min-width: 700px) {
+//   .servicesContainer {
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     position: relative;
+//     width: 80%;
+//   }
+// }
+
+@media only screen and (max-width: 700px) {
+  .servicesContainer {
+    height: 245vh;
+    width: 95%;
+    padding-top: 50px;
   }
-  
-  @media only screen and (max-width: 700px) {
-    .servicesContainer {
-      width: 95%;
-      padding-top: 150px;
-    }
-  }
-  
+}
