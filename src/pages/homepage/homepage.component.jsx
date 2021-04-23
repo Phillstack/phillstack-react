@@ -51,6 +51,7 @@ export default function HomePage() {
     return (
         <div className='homeContainer'>
             <div id='banner'>
+                <span class="verticalAlignHelper"></span>
                 <img src={PhillstackBanner} className='bannerLogo' alt='Phillstack Banner' />
             </div>
             <Carousel
@@ -66,7 +67,7 @@ export default function HomePage() {
                     return (
                         <Image
                             draggable={false}
-                            style={{ width: "100%", height: "100%" }}
+                            className="carouselImage"
                             src={image}
                         />
                     );

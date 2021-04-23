@@ -41,16 +41,6 @@ a {
   border-color: transparent;
 }
 
-// @media only screen and (min-width: 700px) {
-//   .servicesContainer {
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     position: relative;
-//     width: 80%;
-//   }
-// }
-
 @media only screen and (max-width: 700px) {
   .servicesContainer {
     height: 245vh;
