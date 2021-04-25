@@ -10,7 +10,8 @@ class ContactPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fullName: '',
+            firstName: '',
+            lastName: '',
             email: '',
             tier: '',
             budget: '',
@@ -21,8 +22,12 @@ class ContactPage extends React.Component {
         }
     }
 
-    onFullNameChange = (event) => {
-        this.setState({ fullName: event.target.value })
+    onFirstNameNameChange = (event) => {
+        this.setState({ firstName: event.target.value })
+    }
+
+    onLastNameNameChange = (event) => {
+        this.setState({ lastName: event.target.value })
     }
 
     onEmailChange = (event) => {
@@ -44,7 +49,8 @@ class ContactPage extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
         const inquiry = {
-            FullName: this.state.fullName,
+            FirstName: this.state.firstName,
+            LastName: this.state.lastName,
             Email: this.state.email,
             Budget: this.state.budget,
             Message: this.state.message,
@@ -82,14 +88,26 @@ class ContactPage extends React.Component {
                             <fieldset id="contactForm" className="ba b--transparent ph0 mh0">
                                 <legend className="f1 fw6 ph0 mh0">Contact Us!</legend>
                                 <div className="mt3">
-                                    <label className="db fw6 lh-copy f6" htmlFor="fullName">Full Name</label>
+                                    <label className="db fw6 lh-copy f6" htmlFor="firstName">First Name</label>
                                     <input
                                         className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                         type="text"
-                                        name="fullName"
+                                        name="firstName"
                                         id="name"
-                                        placeholder='Full Name'
-                                        onChange={this.onFullNameChange}
+                                        placeholder='First Name'
+                                        onChange={this.onFirstNameNameChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="mt3">
+                                    <label className="db fw6 lh-copy f6" htmlFor="lastName">Last Name</label>
+                                    <input
+                                        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                        type="text"
+                                        name="lastName"
+                                        id="name"
+                                        placeholder='Last Name'
+                                        onChange={this.onLastNameNameChange}
                                         required
                                     />
                                 </div>
@@ -158,7 +176,7 @@ class ContactPage extends React.Component {
                 <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
                     <div className="inquiry-submission-status">
                         <img className="submission-status-image" src={SuccessImage} alt="success"></img>
-                        <h1>Thank You {this.state.fullName}!</h1>
+                        <h1>Thank You {this.state.firstName + ' ' + this.state.lastName}!</h1>
                         <p>We've received your inquiry and will be in touch soon.</p>
                     </div>
                 </article>);
