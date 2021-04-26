@@ -10,6 +10,8 @@ import HomePage from './pages/homepage/homepage.component';
 import ContactPage from './pages/contact/contact.component';
 import ServicesPage from './pages/services/services.component';
 import ProjectsPage from './pages/projects/projects.component';
+import BlogPage from './pages/blog/blog.component';
+import PostView from './pages/postview/postview.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
@@ -38,6 +40,8 @@ function App() {
           <Route path='/services' component={ServicesPage} />
           <Route path='/projects' component={ProjectsPage} />
           <Route path='/contact' component={ContactPage} />
+          <Route path='/blog' component={BlogPage} />
+          <Route path="/:slug" component={PostView} />
         </Switch>
         <Footer />
       </Container>

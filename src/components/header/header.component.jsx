@@ -53,6 +53,14 @@ function Header() {
                                 <FontAwesomeIcon icon={faEnvelope} /> Contact
                             </Nav.Link>
                         </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link
+                                as={Link}
+                                to="/blog"
+                            >
+                                <FontAwesomeIcon icon={faEnvelope} /> Blog
+                            </Nav.Link>
+                        </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
