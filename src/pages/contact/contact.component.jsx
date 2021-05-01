@@ -42,7 +42,7 @@ class ContactPage extends React.Component {
         this.setState({ message: event.target.value })
     }
 
-    onSubscribeChange = (event) => {
+    onSubscribeChange = () => {
         this.setState({ subscribe: !this.state.subscribe })
     }
 
