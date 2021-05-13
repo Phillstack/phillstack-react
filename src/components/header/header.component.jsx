@@ -20,7 +20,7 @@ function Header() {
         >
             <Container>
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Navbar.Brand className="logo" alt="brand">
+                    <Navbar.Brand className="logo" alt="brand" as={Link} to="/">
                         <img src={PhillstackLogo} className='psLogo' alt='Phillstack Logo' />
                     </Navbar.Brand>
                     <Nav className="ml-auto" defaultActiveKey="#home">

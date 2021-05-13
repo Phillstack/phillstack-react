@@ -2,7 +2,7 @@ import React from 'react';
 import BlkGoldImage from '../../assets/blkGoldResize.png';
 import OptumImage from '../../assets/optum.png';
 import BoomboxImage from '../../assets/boomboxCartel.png';
-import MadConsultingGroup from '../../assets/madConsulting.jpg';
+import ShopJW from '../../assets/shopJW.png';
 
 import './projects.styles.scss';
 
@@ -74,15 +74,15 @@ class ProjectsPage extends React.Component {
                 <Container fluid className='projects bottomProject'>
                     <Row>
                         <Col lg={8} md={12}>
-                            <img src={MadConsultingGroup} className='ba b--black-10 shadow-5 img-fluid' alt='MAD Logo' />
+                            <img src={ShopJW} className='ba b--black-10 shadow-5 img-fluid' alt='MAD Logo' />
                         </Col>
                         <Col lg={4} md={12}>
-                            <h2>MAD Consulting Group</h2>
+                            <h2>Shop J&W</h2>
                             <br />
-                            <p>Consulting Website</p>
+                            <p>E-Commerce Website</p>
                             <br />
                             <Button className='viewSiteBtn'>
-                                <a href="http://madcsg.com/" rel="noopener noreferrer" target="_blank">View Website</a>
+                                <a href="https://shopjandw.com" rel="noopener noreferrer" target="_blank">View Website</a>
                             </Button>
                         </Col>
                     </Row>

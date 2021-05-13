@@ -1,5 +1,4 @@
 .servicesContainer {
-  height: 115vh;
   width: 80%;
   padding-top: 100px;
   padding-bottom: 50px;
@@ -26,6 +25,11 @@ a {
   color: black;
 }
 
+.servicesBtn {
+  margin-top: -30px;
+  padding-bottom: 30px;
+}
+
 .btn-primary {
   background: -webkit-linear-gradient(0deg, transparent 50%, #000 50%);
   background-size: 400px 80px;
@@ -43,8 +47,11 @@ a {
 
 @media only screen and (max-width: 700px) {
   .servicesContainer {
-    height: 245vh;
     width: 95%;
     padding-top: 50px;
+  }
+  .servicesBtn {
+    margin-top: -40px;
+    padding-bottom: 70px;
   }
 }

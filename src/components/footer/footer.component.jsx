@@ -59,7 +59,7 @@ function Footer() {
                             <FontAwesomeIcon icon={faEnvelope} />
                         </Nav.Link>
                     </Nav.Item>
-                    <Navbar.Toggle
+                    {/* <Navbar.Toggle
                         aria-controls="responsive-navbar-nav"
                         onClick={() => {
                             updateExpanded(expand ? false : "expanded");
@@ -68,7 +68,7 @@ function Footer() {
                         <span></span>
                         <span></span>
                         <span></span>
-                    </Navbar.Toggle>
+                    </Navbar.Toggle> */}
                 </Nav>
             </Container>
         </Navbar>

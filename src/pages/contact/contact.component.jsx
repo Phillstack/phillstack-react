@@ -3,7 +3,7 @@ import React from 'react';
 import SuccessImage from '../../assets/success.png';
 import ErrorIcon from '../../assets/error-icon.png';
 import { Container, Button } from 'react-bootstrap';
-
+import LoadSpinner from '../../LoadSpinner/LoadSpinner';
 import './contact.styles.scss';
 
 class ContactPage extends React.Component {
@@ -13,12 +13,12 @@ class ContactPage extends React.Component {
             firstName: '',
             lastName: '',
             email: '',
-            tier: '',
-            budget: '',
+            budget: '0 - 900',
             message: '',
-            subscribe: 'checked',
+            subscribe: true,
             isSubmitted: false,
-            isSubmissionError: false
+            isSubmissionError: false,
+            isLoading: false
         }
     }
 
@@ -42,31 +42,36 @@ class ContactPage extends React.Component {
         this.setState({ message: event.target.value })
     }
 
-    onSubscribeChange = (event) => {
-        this.setState({ subscribe: event.target.value })
+    onSubscribeChange = () => {
+        this.setState({ subscribe: !this.state.subscribe })
     }
 
     onSubmit = (event) => {
         event.preventDefault();
         const inquiry = {
-            FirstName: this.state.firstName,
-            LastName: this.state.lastName,
-            Email: this.state.email,
-            Budget: this.state.budget,
-            Message: this.state.message,
-            Subscribe: this.state.subscribe
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            budget: this.state.budget,
+            message: this.state.message,
+            subscribe: this.state.subscribe
         };
-        axios.post("https://vg0kqries7.execute-api.us-west-1.amazonaws.com/prod/inquire", inquiry)
+        this.setState({
+            isLoading: true
+        })
+        axios.post("https://api.phillstack.com/inquire", inquiry)
             .then(
                 () => {
                     this.setState({
-                        isSubmitted: true
+                        isSubmitted: true,
+                        isLoading: false
                     })
                 },
                 (error) => {
                     console.error(error);
                     this.setState({
-                        isSubmissionError: true
+                        isSubmissionError: true,
+                        isLoading: false
                     })
                 }
             )
@@ -80,7 +85,7 @@ class ContactPage extends React.Component {
     }
 
     render() {
-        if (!this.state.isSubmitted && !this.state.isSubmissionError) {
+        if (!this.state.isSubmitted && !this.state.isSubmissionError && !this.state.isLoading) {
             return (
                 <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
                     <form className="pa4 black-80" onSubmit={this.onSubmit}>
@@ -94,7 +99,7 @@ class ContactPage extends React.Component {
                                         type="text"
                                         name="firstName"
                                         id="name"
-                                        placeholder='First Name'
+                                        defaultValue={this.state.firstName}
                                         onChange={this.onFirstNameNameChange}
                                         required
                                     />
@@ -106,7 +111,7 @@ class ContactPage extends React.Component {
                                         type="text"
                                         name="lastName"
                                         id="name"
-                                        placeholder='Last Name'
+                                        defaultValue={this.state.lastName}
                                         onChange={this.onLastNameNameChange}
                                         required
                                     />
@@ -118,7 +123,7 @@ class ContactPage extends React.Component {
                                         type="email"
                                         name="email-address"
                                         id="email-address"
-                                        placeholder='Email'
+                                        defaultValue={this.state.email}
                                         onChange={this.onEmailChange}
                                         required
                                     />
@@ -132,8 +137,7 @@ class ContactPage extends React.Component {
                                         id="budget"
                                         onChange={this.onBudgetChange}
                                     >
-                                        <option disabled defaultValue>Select Budget</option>
-                                        <option>0 - 999</option>
+                                        <option defaultValue>0 - 999</option>
                                         <option>1,000 - 4,999</option>
                                         <option>5,000 - 9,999</option>
                                         <option>10,000+</option>
@@ -146,7 +150,7 @@ class ContactPage extends React.Component {
                                         type="message"
                                         name="message"
                                         id="message"
-                                        placeholder='Message'
+                                        defaultValue={this.state.message}
                                         onChange={this.onMessageChange}
                                     />
                                 </div>
@@ -155,7 +159,8 @@ class ContactPage extends React.Component {
                                         type='checkbox'
                                         id='subscribeCheck'
                                         name='subscribe'
-                                        value={this.onSubscribeChange.value}
+                                        defaultChecked={this.state.subscribe}
+                                        onChange={this.onSubscribeChange}
                                     />
                                     <label htmlFor='subscribe'>Stay up to date with Phillstack!</label>
                                 </div>
@@ -171,6 +176,10 @@ class ContactPage extends React.Component {
                     </form>
                 </article>
             );
+        } else if (this.state.isLoading) {
+            return (<article className="w-100 w-50-m w-25-l mw6 mv6 center spinner">
+                <LoadSpinner />
+            </article>);
         } else if (this.state.isSubmitted && !this.state.isSubmissionError) {
             return (
                 <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
