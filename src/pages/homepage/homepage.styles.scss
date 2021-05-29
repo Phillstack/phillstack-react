@@ -1,90 +1,215 @@
-.homeContainer {
-  height: 100vh;
+.headerSection {
   width: 100%;
-  margin: auto;
+  height: 80vh;
+  background-color: rgb(34, 30, 31);
 }
 
-#banner {
-  height: 75%;
-  clip-path: polygon(0 0, 400% 0%, 125% 50%, 0 80%);
-  background-image: url("../../space.jpeg");
-  padding: 10% 0;
-  text-align: center;
+.psLogo {
+  position: absolute;
+  width: 75px;
+  top: 30px;
+  left: 20px;
 }
 
-.bannerLogo {
-  width: 70%;
-  top: 0;
-}
-
-.projectsHomepage {
-  display: flex;
-  flex-direction: row;
-  height: 60vh;
-  width: 100%;
-  padding: 0px;
-}
-
-.projectDisplay {
-  width: 100%;
-  flex: 1;
-}
-
-.home-img-fluid {
-  display: block;
-  margin: auto;
-  width: 80%;
-}
-
-.hpProject1 {
-}
-
-.hpProject2 {
-  margin-top: 200px;
-}
-
-.hpProject3 {
-  margin-top: 400px;
-}
-
-#connectBanner {
-  height: 35%;
-  clip-path: polygon(0 0, 200% 70%, 0% 150%, 0 0%);
-  background-image: url("../../space.jpeg");
-  padding: 10% 0;
-  text-align: center;
-}
-
-@media only screen and (min-wdith: 1000px) {
-  .projectsHomepage {
-    height: 100vh;
+.socialLogos {
+  position: absolute;
+  width: 30px;
+  top: 30px;
+  right: 20px;
+  a {
+    color: #fdfdfd;
   }
 }
 
-@media only screen and (min-width: 700px) {
-  .homeContainer {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.fa-facebook-f:hover {
+  color: #4267b2;
+  transition: 1s;
+}
+
+.fa-linkedin-in:hover {
+  color: #0e76a8;
+  transition: 1s;
+}
+
+.fa-twitter:hover {
+  color: #1da1f2;
+  transition: 1s;
+}
+
+.psHeaderText {
+  position: absolute;
+  color: #fbfbfb;
+  top: 30%;
+  left: 15%;
+  h2 {
+    color: #feb127;
+    text-align: left;
+    font-size: 40px;
+  }
+}
+
+.psHeaderMain {
+  font-size: 50px;
+}
+
+.secondaryHeaderText {
+  position: absolute;
+  color: #fbfbfb;
+  top: 50%;
+  right: 15%;
+  letter-spacing: 1px;
+  h5 {
+    line-height: 0.8;
+  }
+}
+
+.headerServicesText {
+  color: #feb127;
+}
+
+.homeProjects {
+  position: absolute;
+  width: 100%;
+  height: 140vh;
+  background-color: #282828;
+}
+
+.homeProjectsHeader {
+  margin-top: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  color: #bbbbbb;
+  .line {
+    height: 3px;
+    width: 60px;
+    background: #bbbbbb;
+  }
+  h3 {
+    float: left;
+    width: 20%;
+    word-wrap: break-word;
+    line-height: 40px;
+    font-size: 40px;
+  }
+  .projectDesc {
+    top: 0;
+    // text-align: right;
+    float: right;
+    width: 55%;
+  }
+}
+
+.projectType {
+  clear: both;
+  width: 40%;
+  padding-top: 60px;
+  margin: 0 auto;
+  color: #bbbbbb;
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+  button {
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    background-color: transparent;
+    color: #bbbbbb;
+  }
+}
+
+.project1 {
+  color: #bbbbbb;
+  h3 {
     position: absolute;
-    width: 100%;
+    top: 500px;
+    right: 400px;
+  }
+  h1 {
+    position: absolute;
+    top: 550px;
+    right: 300px;
+    font-size: 50px;
+    line-height: 150px;
+  }
+  p {
+    position: absolute;
+    top: 700px;
+    right: 300px;
+    float: right;
+    width: 35%;
+    word-wrap: break-word;
+    font-size: 20px;
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .homeContainer {
-    width: 100%;
-  }
-  
-  #banner {
-    height: 50%;
-    clip-path: polygon(0 0, 500% 0%, 125% 50%, 0 80%);
-    background-image: url("../../space.jpeg");
-    padding: 25% 0;
-    text-align: center;
-  }
+.prjctBtn {
+  border: none;
+  background-color: transparent;
+  color: #fdfdfd;
+  position: absolute;
+  top: 850px;
+  font-size: 20px;
+}
 
-  .projectsHomepage {
-    height: 100vh;
+.bgSiteImage {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.project2 {
+  color: #bbbbbb;
+  clear: both;
+  h3 {
+    position: absolute;
+    top: 500px;
+    right: 400px;
   }
+  h1 {
+    position: absolute;
+    top: 1200px;
+    left: 300px;
+    font-size: 50px;
+    line-height: 150px;
+  }
+  p {
+    position: absolute;
+    top: 1350px;
+    left: 300px;
+    float: right;
+    width: 35%;
+    word-wrap: break-word;
+    font-size: 20px;
+  }
+}
+
+.scndPrjctBtn {
+  border: none;
+  background-color: transparent;
+  color: #fdfdfd;
+  position: absolute;
+  top: 1500px;
+  left: 300px;
+  font-size: 20px;
+}
+
+.bmbxSiteImage {
+  width: 50%;
+  margin-top: 100px;
+  margin-left: 700px;
+}
+
+.showMoreBtn {
+  background-color: #EEB816;
+  color: #553615;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  width: 120px;
+  height: 35px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 100px;
 }

@@ -1,107 +1,114 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Carousel from "react-multi-carousel";
-import { Container, Image } from "semantic-ui-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import Carousel from "react-multi-carousel";
+// import { Container, Image } from "semantic-ui-react";
 
-import PhillstackBanner from '../../assets/psLogoBlack.png';
-import BlkGoldImage from '../../assets/blkGoldResize.png';
-import OptumImage from '../../assets/optum.png';
-import BoomboxImage from '../../assets/boomboxCartel.png';
+import psLogo from '../../assets/psLogo.png';
+import {
+    faFacebookF,
+    faLinkedinIn,
+    faTwitter
+} from '@fortawesome/free-brands-svg-icons'
 
-import 'react-multi-carousel/lib/styles.css';
+import bgSite from '../../assets/bgSite.jpeg';
+import bmbxSite from '../../assets/bmbxSite.jpg';
+// import PhillstackBanner from '../../assets/psLogoBlack.png';
+// import BlkGoldImage from '../../assets/blkGoldResize.png';
+// import OptumImage from '../../assets/optum.png';
+// import BoomboxImage from '../../assets/boomboxCartel.png';
 
 import './homepage.styles.scss';
-
-import { Row, Button } from 'react-bootstrap';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function HomePage() {
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3,
-            paritialVisibilityGutter: 60
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 3,
-            paritialVisibilityGutter: 50
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-            paritialVisibilityGutter: 30
-        }
-    };
 
-    const images = [
-        "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1549737328-8b9f3252b927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-    ];
 
     return (
         <div className='homeContainer'>
-            <div id='banner'>
-                <img src={PhillstackBanner} className='bannerLogo' alt='Phillstack Banner' />
+            <div className='headerSection'>
+                <div className='PSLogo'>
+                    <img src={psLogo} className='psLogo' alt='Phillstack Logo' />
+                </div>
+                <div className='socialLogos'>
+                    <li>
+                        <a
+                            href='/'
+                            rel="noopener noreferrer"
+                            target="_blank" >
+                            <FontAwesomeIcon icon={faFacebookF} />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href='/'
+                            rel="noopener noreferrer"
+                            target="_blank" >
+                            <FontAwesomeIcon icon={faLinkedinIn} />
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href='/'
+                            rel="noopener noreferrer"
+                            target="_blank" >
+                            <FontAwesomeIcon icon={faTwitter} />
+                        </a>
+                    </li>
+                </div>
+                <div className='psHeaderText'>
+                    <h1 className='psHeaderMain'>Phillstack</h1>
+                    <h2>innovation,</h2>
+                    <h2>modernism</h2>
+                    <h2>&amp; aesthetics</h2>
+                </div>
+                <div className='secondaryHeaderText'>
+                    <h5>Elevate your brand with</h5>
+                    <h5>Phillstack &mdash; everything</h5>
+                    <h5>from strategy to scale</h5>
+                    <h5>with our services of</h5>
+                    <h5 className='headerServicesText'>UI &amp; Design, Front-End,</h5>
+                    <h5 className='headerServicesText'>Back-End &amp; Consulting</h5>
+                </div>
             </div>
-            <Carousel
-                ssr
-                partialVisbile={false}
-                infinite={true}
-                itemClass="image-item"
-                responsive={responsive}
-                swipeable={true}
-                draggable={true}
-            >
-                {images.slice(0, 5).map(image => {
-                    return (
-                        <Image
-                            draggable={false}
-                            style={{ width: "100%", height: "100%" }}
-                            src={image}
-                        />
-                    );
-                })}
-            </Carousel>
-            <Container fluid className='projectsHomepage'>
-                <Row className='hpProject1 projectDisplay'>
-                    <img src={BlkGoldImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='BlkGold Logo' />
-                </Row>
-                <Row className='hpProject2 projectDisplay'>
-                    <img src={OptumImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='Optum Logo' />
-                </Row>
-                <Row className='hpProject3 projectDisplay'>
-                    <img src={BoomboxImage} className='ba b--black-10 shadow-5 home-img-fluid' alt='Boombox Cartel Logo' />
-                </Row>
-            </Container>
-            <div id='connectBanner'>
-                <Container className='contactSection'>
-                    <Row className=' letsConnect'>
-                        <h1>Let's Connect!</h1>
-                    </Row>
-                    <Row className='contactSocialLinks'>
-                        <h3>Social Links</h3>
-                    </Row>
-                </Container>
-                <Container>
-                    <Row className='contactButton'>
-                        <Button
-                            href="/contact"
-                        >
-                            Contact
-                            </Button>
-                    </Row>
-                </Container>
-
+            <div className='homeProjects'>
+                <div className='homeProjectsHeader'>
+                    <p className='line'></p>
+                    <h3>Recent
+                    Projects</h3>
+                    <h6 className='projectDesc'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</h6>
+                </div>
+                <div className='projectType'>
+                    <ul>
+                        <li><button>All</button></li>
+                        <p>&#47;</p>
+                        <li><button>Front-End</button></li>
+                        <p>&#47;</p>
+                        <li><button>Back-End</button></li>
+                        <p>&#47;</p>
+                        <li><button>Consulting</button></li>
+                        <p>&#47;</p>
+                        <li><button>Web Design</button></li>
+                    </ul>
+                </div>
+                <div className='project1'>
+                    <img src={bgSite} alt='bgSite' className='bgSiteImage' />
+                    <h3>Front-End, Back-End, Web Design</h3>
+                    <h1>BlkGold Official Website</h1>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button className='prjctBtn'>Show Project <FontAwesomeIcon icon={faArrowRight} /></button>
+                </div>
+                <div className='project2'>
+                    <img src={bmbxSite} alt='bmbxSite' className='bmbxSiteImage' />
+                    <h3>Front-End, Back-End, Web Design</h3>
+                    <h1>Boombox Cartel Official Website</h1>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button className='scndPrjctBtn'>Show Project <FontAwesomeIcon icon={faArrowRight} /></button>
+                </div>
+                <button className='showMoreBtn'>Show More</button>
+            </div>
+            <div className='contactSection'>
+                
             </div>
         </div>
     );
