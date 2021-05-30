@@ -17,7 +17,7 @@ class BlogPage extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://blog.phillstack.com/wp-json/wp/v2/posts?per_page=100", {
+        fetch("https://blog.phillstack.com/wp-json/wp/v2/posts?per_page=100", {
             method: "GET"
         })
             .then((response) => response.json())
