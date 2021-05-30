@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button"
 import { Link } from "react-router-dom";
+import ReactHtmlParser from 'react-html-parser';
 
 import './blog.styles.scss';
 
@@ -15,11 +17,15 @@ class BlogPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://xdn.xfq.mybluehost.me/wp-json/wp/v2/posts").then(posts => {
-            this.setState({
-                posts: posts.data
+        fetch("http://blog.phillstack.com/wp-json/wp/v2/posts?per_page=100", {
+            method: "GET"
+        })
+            .then((response) => response.json())
+            .then(posts => {
+                this.setState({
+                    posts: posts
+                });
             });
-        });
     }
 
     createMarkup(html) {
@@ -30,18 +36,17 @@ class BlogPage extends React.Component {
         return (
             <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
                 <div>
-                    {this.state.posts.map(post => (
+                    {this.state.posts?.map(post => (
                         <Link to={`/${post.slug}`} key={post.id}>
-                            <div className="card" key={post.id}>
-                                <div className="card-content">
-                                    <h3>{post.title.rendered}</h3>
-                                    <div
-                                        dangerouslySetInnerHTML={this.createMarkup(
-                                            post.excerpt.rendered
-                                        )}
-                                    />
-                                </div>
-                            </div>
+                            <Card>
+                                <Card.Img variant="top" src={post.jetpack_featured_media_url} />
+                                <Card.Body>
+                                    <Card.Title>{post.title.rendered}</Card.Title>
+                                    <Card.Text>{ReactHtmlParser(post.excerpt.rendered)}
+                                    </Card.Text>
+                                    <Button variant="primary">Read</Button>
+                                </Card.Body>
+                            </Card>
                         </Link>
                     ))}
                 </div>

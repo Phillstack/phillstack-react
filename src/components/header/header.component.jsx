@@ -9,6 +9,7 @@ import "./header.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import logo from "../Assets/logo.png";
 import { faEnvelope, faHome, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
 function Header() {
 
@@ -58,7 +59,7 @@ function Header() {
                                 as={Link}
                                 to="/blog"
                             >
-                                <FontAwesomeIcon icon={faEnvelope} /> Blog
+                                <FontAwesomeIcon icon={faNewspaper} /> Blog
                             </Nav.Link>
                         </Nav.Item>
                     </Nav>

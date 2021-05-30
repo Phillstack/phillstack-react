@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import "./footer.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faEnvelope, faHome, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faHome, faNewspaper, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
@@ -57,6 +57,14 @@ function Footer() {
                             to="/contact"
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link
+                            as={Link}
+                            to="/blog"
+                        >
+                            <FontAwesomeIcon icon={faNewspaper} />
                         </Nav.Link>
                     </Nav.Item>
                     {/* <Navbar.Toggle
