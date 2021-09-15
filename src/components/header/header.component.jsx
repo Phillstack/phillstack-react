@@ -8,7 +8,7 @@ import PhillstackLogo from '../../assets/psLogo.png';
 import "./header.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import logo from "../Assets/logo.png";
-import { faEnvelope, faHome, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faHome, faProjectDiagram, faToolbox, faStore } from "@fortawesome/free-solid-svg-icons";
 import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
 function Header() {
@@ -60,6 +60,14 @@ function Header() {
                                 to="/blog"
                             >
                                 <FontAwesomeIcon icon={faNewspaper} /> Blog
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link
+                                href="https://www.bonfire.com/store/phillstack/"
+                                target="_blank"
+                            >
+                                <FontAwesomeIcon icon={faStore} /> Merch
                             </Nav.Link>
                         </Nav.Item>
                     </Nav>

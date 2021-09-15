@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button"
-import { Link } from "react-router-dom";
 import ReactHtmlParser from 'react-html-parser';
+import Skeleton from 'react-loading-skeleton';
 
 import './blog.styles.scss';
+import { CardDeck, Container } from "react-bootstrap";
 
 class BlogPage extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            posts: []
+            posts: null
         };
         this.createMarkup = this.createMarkup.bind();
     }
@@ -33,25 +34,42 @@ class BlogPage extends React.Component {
     }
 
     render() {
-        return (
-            <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
-                <div>
-                    {this.state.posts?.map(post => (
-                        <Link to={`/${post.slug}`} key={post.id}>
-                            <Card>
+        if (this.state.posts) {
+            return (
+                <Container className='postsContainer'>
+                    <CardDeck>
+                        {this.state.posts?.map(post => (
+                            <Card className="p-1">
                                 <Card.Img variant="top" src={post.jetpack_featured_media_url} />
                                 <Card.Body>
                                     <Card.Title>{post.title.rendered}</Card.Title>
                                     <Card.Text>{ReactHtmlParser(post.excerpt.rendered)}
                                     </Card.Text>
-                                    <Button variant="primary">Read</Button>
+                                    <Button className='viewSiteBtn'>
+                                        <a href={`/${post.slug}`}>Read</a>
+                                    </Button>
                                 </Card.Body>
                             </Card>
-                        </Link>
-                    ))}
-                </div>
-            </article>
-        )
+                        ))}
+                    </CardDeck>
+                </Container>
+            )
+        } else {
+            return (
+                <Container className='postsContainer'>
+                    <CardDeck>
+                    <Card className="p-1">
+                                <Card.Img variant="top"/>
+                                <Card.Body>
+                                    <Card.Title>{ <Skeleton height={100} width={100} count={1}/>}</Card.Title>
+                                    <Card.Text>{ <Skeleton height={100} width={100} count={1}/>}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                    </CardDeck>
+                </Container>
+            )
+        }
     }
 }
 

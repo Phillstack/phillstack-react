@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import "./footer.styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faEnvelope, faHome, faNewspaper, faProjectDiagram, faToolbox } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faHome, faNewspaper, faProjectDiagram, faToolbox, faStore } from "@fortawesome/free-solid-svg-icons";
 
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
@@ -67,6 +67,14 @@ function Footer() {
                             <FontAwesomeIcon icon={faNewspaper} />
                         </Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                            <Nav.Link
+                                href="https://www.bonfire.com/store/phillstack/"
+                                target="_blank"
+                            >
+                                <FontAwesomeIcon icon={faStore} />
+                            </Nav.Link>
+                        </Nav.Item>
                     {/* <Navbar.Toggle
                         aria-controls="responsive-navbar-nav"
                         onClick={() => {
