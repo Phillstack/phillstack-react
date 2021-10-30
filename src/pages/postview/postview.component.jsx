@@ -13,7 +13,7 @@ class PostView extends Component {
     componentDidMount() {
         const slug = this.props.match.params.slug;
         axios
-            .get(`https://xdn.xfq.mybluehost.me/wp-json/wp/v2/posts?slug=${slug}`)
+            .get(`https://blog.phillstack.com/wp-json/wp/v2/posts?slug=${slug}`)
             .then(post => {
                 this.setState({
                     post: post.data[0]
@@ -29,7 +29,7 @@ class PostView extends Component {
         let build;
         if (this.state.post.title) {
             build = (
-                <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 mv6 shadow-5 center">
+                <article className="container mv6">
                     <div>
                         <h1>{this.state.post.title.rendered}</h1>
                         <div
