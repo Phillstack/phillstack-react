@@ -52,7 +52,7 @@ class BlogPage extends React.Component {
         var skeletonCards = [];
         for (var i = 0; i < count; i++) {
             skeletonCards.push(
-                <Link className="col-sm-4 disabled-link" to='/'>
+                <Link className="col-sm-4 disabled-link" to='/' key={i}>
                     <Card className="p-1 card col-sm-4">
                         <Skeleton className="card-image" variant="rectangular" />
                         <Card.Body className="card-body">

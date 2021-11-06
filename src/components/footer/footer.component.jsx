@@ -10,7 +10,7 @@ import { faEnvelope, faHome, faNewspaper, faProjectDiagram, faToolbox, faStore }
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
-    const [expand, updateExpanded] = useState(false);
+    const [expand] = useState(false);
 
     return (
         <Navbar
