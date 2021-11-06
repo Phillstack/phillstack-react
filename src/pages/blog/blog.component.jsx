@@ -23,6 +23,7 @@ class BlogPage extends React.Component {
         })
             .then((response) => response.json())
             .catch((error) => {
+                console.log("Error retrieving posts: ", error);
                 this.fetchPostsError = true;
             })
             .then(posts => {

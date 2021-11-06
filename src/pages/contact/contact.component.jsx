@@ -162,7 +162,7 @@ class ContactPage extends React.Component {
                                         defaultChecked={this.state.subscribe}
                                         onChange={this.onSubscribeChange}
                                     />
-                                    <label htmlFor='subscribe'>Stay up to date with Phillstack!</label>
+                                    <label htmlFor='subscribe'>Stay up to date with PhillStack!</label>
                                 </div>
                             </fieldset>
                             <div className="mv3" style={{ display: 'flex', justifyContent: 'space-evenly' }}>

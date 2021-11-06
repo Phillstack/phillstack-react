@@ -2,9 +2,18 @@
     height: auto;
 }
 
-.postsContainer {
-    padding-top: 100px;
+@media only screen and (min-width: 768px) {
+    .postsContainer {
+        padding-top: 100px;
+    }
 }
+
+@media only screen and (max-width: 767px) {
+    .postsContainer {
+        margin-bottom: 50px;
+        margin-top: 10px;
+    }
+  }
 
 .viewSiteBtn a {
     color: black;
