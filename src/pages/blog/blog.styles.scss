@@ -9,3 +9,29 @@
 .viewSiteBtn a {
     color: black;
 }
+
+.card-body, .card-footer {
+    text-align: left;
+}
+
+.card {
+    min-height: 400px;
+    max-width: 400px;
+}
+
+.card-image {
+    max-height: 250px;
+    min-height: 250px;
+}
+
+.card-body {
+    height:100px;
+}
+
+.card-footer {
+    height:50px;
+}
+
+.disabled-link {
+    pointer-events: none;
+}

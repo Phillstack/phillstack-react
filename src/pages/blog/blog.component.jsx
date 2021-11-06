@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button"
-import ReactHtmlParser from 'react-html-parser';
 import Skeleton from 'react-loading-skeleton';
 
 import './blog.styles.scss';
 import { CardDeck, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class BlogPage extends React.Component {
 
@@ -14,6 +13,7 @@ class BlogPage extends React.Component {
         this.state = {
             posts: null
         };
+        this.fetchPostsError = false;
         this.createMarkup = this.createMarkup.bind();
     }
 
@@ -22,6 +22,9 @@ class BlogPage extends React.Component {
             method: "GET"
         })
             .then((response) => response.json())
+            .catch((error) => {
+                this.fetchPostsError = true;
+            })
             .then(posts => {
                 this.setState({
                     posts: posts
@@ -34,42 +37,54 @@ class BlogPage extends React.Component {
     }
 
     render() {
-        if (this.state.posts) {
-            return (
-                <Container className='postsContainer'>
-                    <CardDeck>
-                        {this.state.posts?.map(post => (
-                            <Card className="p-1">
-                                <Card.Img variant="top" src={post.jetpack_featured_media_url} />
-                                <Card.Body>
-                                    <Card.Title>{post.title.rendered}</Card.Title>
-                                    <Card.Text>{ReactHtmlParser(post.excerpt.rendered)}
-                                    </Card.Text>
-                                    <Button className='viewSiteBtn'>
-                                        <a href={`/${post.slug}`}>Read</a>
-                                    </Button>
-                                </Card.Body>
-                            </Card>
-                        ))}
-                    </CardDeck>
-                </Container>
-            )
-        } else {
-            return (
-                <Container className='postsContainer'>
-                    <CardDeck>
-                    <Card className="p-1">
-                                <Card.Img variant="top"/>
-                                <Card.Body>
-                                    <Card.Title>{ <Skeleton height={100} width={100} count={1}/>}</Card.Title>
-                                    <Card.Text>{ <Skeleton height={100} width={100} count={1}/>}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                    </CardDeck>
-                </Container>
-            )
+        return (
+            <Container className='postsContainer'>
+                <CardDeck className="row">
+                    {this.fetchPostsError && <h1>Error fetching posts</h1>}
+                    {!this.fetchPostsError && !this.state.posts && this.getskeletonCards(2)}
+                    {!this.fetchPostsError && this.state.posts?.map(post => (this.getBlogPost(post)))}
+                </CardDeck>
+            </Container>
+        )
+    }
+
+    getskeletonCards(count) {
+        var skeletonCards = [];
+        for (var i = 0; i < count; i++) {
+            skeletonCards.push(
+                <Link className="col-sm-4 disabled-link" to='/'>
+                    <Card className="p-1 card col-sm-4">
+                        <Skeleton className="card-image" variant="rectangular" />
+                        <Card.Body className="card-body">
+                            <Card.Title>{<Skeleton />}</Card.Title>
+                        </Card.Body>
+                        <Card.Footer>{<Skeleton />}</Card.Footer>
+                    </Card>
+                </Link>
+            );
         }
+        return skeletonCards;
+    }
+
+    getBlogPost(post) {
+        return (
+            <Link to={post.slug} className="col-sm-4" key={post.id}>
+                <Card className="p-1 card col-sm-4">
+                    <Card.Img className="card-image" variant="top" src={post.jetpack_featured_media_url} />
+                    <Card.Body className="card-body">
+                        <Card.Title>{post.title.rendered}</Card.Title>
+                    </Card.Body>
+                    <Card.Footer>Last Updated {new Date(post.modified).toLocaleDateString(
+                        'en-US',
+                        {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        }
+                    )}</Card.Footer>
+                </Card>
+            </Link>
+        )
     }
 }
 
