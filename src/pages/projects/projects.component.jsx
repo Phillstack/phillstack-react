@@ -1,6 +1,7 @@
 import React from 'react';
+import { Modal } from 'react-bootstrap';
+import KiterImage from '../../assets/kiter.png'
 import BlkGoldImage from '../../assets/blkGoldResize.png';
-import OptumImage from '../../assets/optum.png';
 import BoomboxImage from '../../assets/boomboxCartel.png';
 import ShopJW from '../../assets/shopJW.png';
 
@@ -8,14 +9,14 @@ import './projects.styles.scss';
 
 import { Container, Col, Row, Button } from 'react-bootstrap';
 
-
 class ProjectsPage extends React.Component {
     constructor() {
         super();
         this.state = {
             projectName: '',
             siteLink: '',
-            techStack: ''
+            techStack: '',
+            modalShow: false
         }
     }
 
@@ -24,6 +25,22 @@ class ProjectsPage extends React.Component {
             <div className='projectsContainer'>
                 <h1>Projects</h1>
                 <Container fluid className='projects'>
+                <Row>
+                    <Col lg={8} md={12}>
+                        <img src={KiterImage} className='ba b--black-10 shadow-5 img-fluid' alt='Kiter Logo' />
+                    </Col>
+                    <Col lg={4} md={12}>
+                        <h2>Kiter</h2>
+                        <br />
+                        <p>Job Application Tracker</p>
+                        <br />
+                        <Button className='viewSiteBtn'>
+                            <a href="https://kiter.app" rel="noopener noreferrer" target="_blank">View Website</a>
+                        </Button>
+                        <br/><br/>
+                        <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true })}>Case Study</Button>
+                    </Col>
+                    </Row>
                     <Row>
                         <Col lg={8} md={12}>
                             <img src={BlkGoldImage} className='ba b--black-10 shadow-5 img-fluid' alt='BlkGold Logo' />
@@ -35,22 +52,6 @@ class ProjectsPage extends React.Component {
                             <br />
                             <Button className='viewSiteBtn'>
                                 <a href="http://blkgoldmusic.com" rel="noopener noreferrer" target="_blank">View Website</a>
-                            </Button>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container fluid className='projects'>
-                    <Row>
-                        <Col lg={8} md={12}>
-                            <img src={OptumImage} className='ba b--black-10 shadow-5 img-fluid' alt='Optum Logo' />
-                        </Col>
-                        <Col lg={4} md={12}>
-                            <h2>Drug Cost Estimator</h2>
-                            <br />
-                            <p>Micro Front End Application</p>
-                            <br />
-                            <Button className='viewSiteBtn'>
-                                <a href="https://www.aarpmedicareplans.com/health-plans/estimate-drug-costs.html#/drug-cost-estimator" rel="noopener noreferrer" target="_blank">View Website</a>
                             </Button>
                         </Col>
                     </Row>
@@ -86,10 +87,44 @@ class ProjectsPage extends React.Component {
                             </Button>
                         </Col>
                     </Row>
+                    <CaseStudyModal
+                        show={this.state.modalShow}
+                        onHide={() => this.setState({ modalShow: false })}
+                    />
                 </Container>
             </div>
         )
     }
 }
+
+const CaseStudyModal = (props) => {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title dialogClassName="modal-header" id="contained-modal-title-vcenter">
+            Kiter
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>We were hired by Kiter to migrate their backend services and data store from the bubble.io no code platform to AWS.  
+            They were facing scalability problems on the platform and wanted more control over thier data.
+            </p><p>
+            Using AWS amplify we were able to rapidly create several graphql APIs backed by both DynamoDB and Opensearch, as well as cognito to handle authentication and authorization.
+            We came up with a migration plan that securely and reliabily transfered over all user data.  
+            Amplify generated all of the new graphql schema that the frontend would need for us so moving from their REST APIs to the graphql APIs was a breeze.
+            <br/><br/>From here they were able to implement new features and continue to grow their offerrings with ease.
+            </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default ProjectsPage;
