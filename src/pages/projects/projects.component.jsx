@@ -38,7 +38,9 @@ class ProjectsPage extends React.Component {
                             <a href="https://kiter.app" rel="noopener noreferrer" target="_blank">View Website</a>
                         </Button>
                         <br/><br/>
-                        <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true })}>Case Study</Button>
+                        <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true })}>
+                            <a href="" rel="noopener noreferrer" className="disabled">Case Study</a>
+                        </Button>
                     </Col>
                     </Row>
                     <Row>
@@ -121,7 +123,7 @@ const CaseStudyModal = (props) => {
             </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button className="caseStudyBtn" onClick={props.onHide}><a href="" rel="noopener noreferrer" className="disabled">Close</a></Button>
         </Modal.Footer>
       </Modal>
     );

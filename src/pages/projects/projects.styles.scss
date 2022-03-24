@@ -23,6 +23,15 @@
   color: black;
 }
 
+.caseStudyBtn a {
+  color: black;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .modal-header {
   height: 80px;
 } 
