@@ -1,0 +1,42 @@
+{
+    "ResourceRecordSets": [
+        {
+            "Name": "api.phillstack.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2MUQ32089INYE",
+                "DNSName": "d-8xovgmhhh6.execute-api.us-west-1.amazonaws.com.",
+                "EvaluateTargetHealth": true
+            }
+        },
+        {
+            "Name": "api.phillstack.com.",
+            "Type": "NS",
+            "TTL": 172800,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1750.awsdns-26.co.uk."
+                },
+                {
+                    "Value": "ns-773.awsdns-32.net."
+                },
+                {
+                    "Value": "ns-1266.awsdns-30.org."
+                },
+                {
+                    "Value": "ns-266.awsdns-33.com."
+                }
+            ]
+        },
+        {
+            "Name": "api.phillstack.com.",
+            "Type": "SOA",
+            "TTL": 900,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1750.awsdns-26.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                }
+            ]
+        }
+    ]
+}

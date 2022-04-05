@@ -114,11 +114,11 @@ const CaseStudyModal = (props) => {
         </Modal.Header>
         <Modal.Body>
           <p>We were hired by Kiter to migrate their backend services and data store from the bubble.io no code platform to AWS.  
-            They were facing scalability problems on the platform and wanted more control over thier data.
+            They were facing scalability problems on the platform and wanted more control over their data.
             </p><p>
-            Using AWS amplify we were able to rapidly create several graphql APIs backed by both DynamoDB and Opensearch, as well as cognito to handle authentication and authorization.
+            Using AWS Amplify we were able to rapidly create several GraphQL APIs backed by both DynamoDB and Opensearch, as well as Cognito to handle authentication and authorization.
             We came up with a migration plan that securely and reliabily transfered over all user data.  
-            Amplify generated all of the new graphql schema that the frontend would need for us so moving from their REST APIs to the graphql APIs was a breeze.
+            Amplify generated all of the new GraphQL schema that the frontend would need for us so moving from their REST APIs to the GraphQL APIs was a breeze.
             <br/><br/>From here they were able to implement new features and continue to grow their offerrings with ease.
             </p>
         </Modal.Body>

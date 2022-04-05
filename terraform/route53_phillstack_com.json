@@ -1,0 +1,145 @@
+{
+    "ResourceRecordSets": [
+        {
+            "Name": "phillstack.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "d121v952zrdhj3.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "phillstack.com.",
+            "Type": "MX",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "15 ewtquzli66cd7inselvijxvmmtjxkkyqu4fy774htjzektgcxhdq.mx-verification.google.com."
+                },
+                {
+                    "Value": "1 ASPMX.L.GOOGLE.COM"
+                },
+                {
+                    "Value": "5 ALT1.ASPMX.L.GOOGLE.COM"
+                },
+                {
+                    "Value": "5 ALT2.ASPMX.L.GOOGLE.COM"
+                },
+                {
+                    "Value": "10 ALT3.ASPMX.L.GOOGLE.COM"
+                },
+                {
+                    "Value": "10 ALT4.ASPMX.L.GOOGLE.COM"
+                }
+            ]
+        },
+        {
+            "Name": "phillstack.com.",
+            "Type": "NS",
+            "TTL": 172800,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1687.awsdns-18.co.uk."
+                },
+                {
+                    "Value": "ns-491.awsdns-61.com."
+                },
+                {
+                    "Value": "ns-1428.awsdns-50.org."
+                },
+                {
+                    "Value": "ns-863.awsdns-43.net."
+                }
+            ]
+        },
+        {
+            "Name": "phillstack.com.",
+            "Type": "SOA",
+            "TTL": 900,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-491.awsdns-61.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                }
+            ]
+        },
+        {
+            "Name": "phillstack.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=spf1 include:spf.mandrillapp.com ?all\""
+                }
+            ]
+        },
+        {
+            "Name": "_19b2f7bed6e5a2bb51a755385d5a763b.phillstack.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_e464b44823bdb0b75e13d073ab3db817.hkvuiqjoua.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "mandrill._domainkey.phillstack.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;\""
+                }
+            ]
+        },
+        {
+            "Name": "api.phillstack.com.",
+            "Type": "NS",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1750.awsdns-26.co.uk."
+                },
+                {
+                    "Value": "ns-773.awsdns-32.net."
+                },
+                {
+                    "Value": "ns-1266.awsdns-30.org."
+                },
+                {
+                    "Value": "ns-266.awsdns-33.com."
+                }
+            ]
+        },
+        {
+            "Name": "blog.phillstack.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "xdn.xfq.mybluehost.me."
+                }
+            ]
+        },
+        {
+            "Name": "www.phillstack.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "d121v952zrdhj3.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "_ccd863db8616c990333bf598c8f79ee5.www.phillstack.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_c1e2e37b9135c8f7f463e3df96d2ea9a.ltfvzjuylp.acm-validations.aws."
+                }
+            ]
+        }
+    ]
+}
