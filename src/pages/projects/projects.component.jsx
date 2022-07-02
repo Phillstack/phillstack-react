@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
+import FlylineLogo from '../../assets/flyline_logo.png'
 import KiterImage from '../../assets/kiter.png'
 import BlkGoldImage from '../../assets/blkGoldResize.png';
 import BoomboxImage from '../../assets/boomboxCartel.png';
@@ -16,7 +17,8 @@ class ProjectsPage extends React.Component {
             projectName: '',
             siteLink: '',
             techStack: '',
-            modalShow: false
+            modalShow: false,
+            activeModal: ''
         }
     }
 
@@ -25,35 +27,41 @@ class ProjectsPage extends React.Component {
             <div className='projectsContainer'>
                 <h1>Projects</h1>
                 <Container fluid className='projects'>
-                <Row>
-                    <Col lg={8} md={12}>
-                        <img src={KiterImage} className='ba b--black-10 shadow-5 img-fluid' alt='Kiter Logo' />
-                    </Col>
-                    <Col lg={4} md={12}>
-                        <h2>Kiter</h2>
-                        <br />
-                        <p>Job Application Tracker</p>
-                        <br />
-                        <Button className='viewSiteBtn'>
-                            <a href="https://kiter.app" rel="noopener noreferrer" target="_blank">View Website</a>
-                        </Button>
-                        <br/><br/>
-                        <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true })}>
-                            <a href="" rel="noopener noreferrer" className="disabled">Case Study</a>
-                        </Button>
-                    </Col>
-                    </Row>
                     <Row>
                         <Col lg={8} md={12}>
-                            <img src={BlkGoldImage} className='ba b--black-10 shadow-5 img-fluid' alt='BlkGold Logo' />
+                            <img src={FlylineLogo} className='ba b--black-10 shadow-5 img-fluid' alt='Kiter Logo' />
                         </Col>
                         <Col lg={4} md={12}>
-                            <h2>BlkGold</h2>
+                            <h2>Flyline</h2>
                             <br />
-                            <p>Music Website</p>
+                            <p>Travel APIs</p>
                             <br />
                             <Button className='viewSiteBtn'>
-                                <a href="http://blkgoldmusic.com" rel="noopener noreferrer" target="_blank">View Website</a>
+                                <a href="https://flyline.io" rel="noopener noreferrer" target="_blank">View Website</a>
+                            </Button>
+                            <br /><br />
+                            <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true, activeModal: 'flyline' })}>
+                                <a href="" rel="noopener noreferrer" className="disabled">Case Study</a>
+                            </Button>
+                        </Col>
+                    </Row>
+                </Container>
+                <Container fluid className='projects'>
+                    <Row>
+                        <Col lg={8} md={12}>
+                            <img src={KiterImage} className='ba b--black-10 shadow-5 img-fluid' alt='Kiter Logo' />
+                        </Col>
+                        <Col lg={4} md={12}>
+                            <h2>Kiter</h2>
+                            <br />
+                            <p>Job Application Tracker</p>
+                            <br />
+                            <Button className='viewSiteBtn'>
+                                <a href="https://kiter.app" rel="noopener noreferrer" target="_blank">View Website</a>
+                            </Button>
+                            <br /><br />
+                            <Button className='caseStudyBtn' onClick={() => this.setState({ modalShow: true, activeModal: 'kiter' })}>
+                                <a href="" rel="noopener noreferrer" className="disabled">Case Study</a>
                             </Button>
                         </Col>
                     </Row>
@@ -89,8 +97,12 @@ class ProjectsPage extends React.Component {
                             </Button>
                         </Col>
                     </Row>
-                    <CaseStudyModal
-                        show={this.state.modalShow}
+                    <KiterCaseStudy
+                        show={this.state.modalShow && this.state.activeModal === 'kiter'}
+                        onHide={() => this.setState({ modalShow: false })}
+                    />
+                    <FlylineCaseStudy
+                        show={this.state.modalShow && this.state.activeModal === 'flyline'}
                         onHide={() => this.setState({ modalShow: false })}
                     />
                 </Container>
@@ -99,34 +111,62 @@ class ProjectsPage extends React.Component {
     }
 }
 
-const CaseStudyModal = (props) => {
+const KiterCaseStudy = (props) => {
     return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title dialogClassName="modal-header" id="contained-modal-title-vcenter">
-            Kiter
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>We were hired by Kiter to migrate their backend services and data store from the bubble.io no code platform to AWS.  
-            They were facing scalability problems on the platform and wanted more control over their data.
-            </p><p>
-            Using AWS Amplify we were able to rapidly create several GraphQL APIs backed by both DynamoDB and Opensearch, as well as Cognito to handle authentication and authorization.
-            We came up with a migration plan that securely and reliabily transfered over all user data.  
-            Amplify generated all of the new GraphQL schema that the frontend would need for us so moving from their REST APIs to the GraphQL APIs was a breeze.
-            <br/><br/>From here they were able to implement new features and continue to grow their offerrings with ease.
-            </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="caseStudyBtn" onClick={props.onHide}><a href="" rel="noopener noreferrer" className="disabled">Close</a></Button>
-        </Modal.Footer>
-      </Modal>
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title dialogClassName="modal-header" id="contained-modal-title-vcenter">
+                    Kiter
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>We were hired by Kiter to migrate their backend services and data store from the bubble.io no code platform to AWS.
+                    They were facing scalability problems on the platform and wanted more control over their data.
+                </p><p>
+                    Using AWS Amplify we were able to rapidly create several GraphQL APIs backed by both DynamoDB and Opensearch, as well as Cognito to handle authentication and authorization.
+                    We came up with a migration plan that securely and reliabily transferred over all user data.
+                    Amplify generated all of the new GraphQL schema that the frontend would need for us so moving from their REST APIs to the GraphQL APIs was a breeze.
+                    <br /><br />From here they were able to implement new features and continue to grow their offerrings with ease.
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button className="caseStudyBtn" onClick={props.onHide}><a href="" rel="noopener noreferrer" className="disabled">Close</a></Button>
+            </Modal.Footer>
+        </Modal>
     );
-  }
+};
+
+const FlylineCaseStudy = (props) => {
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title dialogClassName="modal-header" id="contained-modal-title-vcenter">
+                    Flyline
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>Flyline was looking for a way to reduce their AWS spend so they brought us on board to dive deeper into their current usage.
+                    With the use of various AWS optimizaiton services as well as our knowledge of running and managing AWS resources we identified many areas Flyline could cut cloud costs.
+                </p><p>
+                    After scaling down resources and removing unused resources we were able to reduce Flylines monthly AWS spend by 75%!
+                    <br /><br />We also went ahead and configured some additional services to monitor and scale up and down their resource usage based on key compute metrics.
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button className="caseStudyBtn" onClick={props.onHide}><a href="" rel="noopener noreferrer" className="disabled">Close</a></Button>
+            </Modal.Footer>
+        </Modal>
+    );
+};
 
 export default ProjectsPage;

@@ -140,7 +140,9 @@ class ContactPage extends React.Component {
                                         <option defaultValue>0 - 999</option>
                                         <option>1,000 - 4,999</option>
                                         <option>5,000 - 9,999</option>
-                                        <option>10,000+</option>
+                                        <option>10,000 - 50,000</option>
+                                        <option>50,000 - 99,999</option>
+                                        <option>100,000+</option>
                                     </select>
                                 </div>
                                 <div className="mv3">
